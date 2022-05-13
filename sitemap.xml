@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://moecat.gq/readme/</loc>
+    <loc>http://moecat.gq/readme/</loc>
     <priority>0</priority>
   </url><url>
-    <loc>https://moecat.gq/categories/</loc>
+    <loc>http://moecat.gq/categories/</loc>
   </url><url>
-    <loc>https://moecat.gq/</loc>
+    <loc>http://moecat.gq/</loc>
   </url><url>
-    <loc>https://moecat.gq/tags/</loc>
+    <loc>http://moecat.gq/tags/</loc>
   </url>
 </urlset>
