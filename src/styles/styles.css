@@ -1,0 +1,432 @@
+
+/*
+	Designed by BobYang.
+*/
+
+@import url("./include/normalize.css");
+@import url("./include/typo.less.css");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap");
+@import url("./include/remix-icon/remixicon.css");
+
+/* BLUE MODE */
+:root {
+  --bob-theme-color: #6666BB;
+
+  --bob-background: linear-gradient(#F4F4F6, #F4F4FF);
+  --bob-text-color: #363636;
+
+  --bob-header-background: #FCFCFC;
+  --bob-header-text-color: #363636;
+  --bob-header-avatar-shadow-color: #CCCCCC;
+
+  --bob-icon-background: #DDDDDD;
+
+  --bob-small-text-color: #AAAAAA;
+
+  --bob-code-background: #DDDDDD;
+
+  --bob-grid-block-background: #FCFCFC;
+  --bob-grid-block-text-color: #363636;
+
+  --bob-card-background: #FCFCFC;
+  --bob-card-text-color: #363636;
+
+  --bob-bangumi-background: #6666BB11;
+  --bob-bangumi-text-color: inherit;
+
+  --bob-posts-background: #6666BB11;
+  --bob-posts-text-color: inherit;
+
+  --bob-projects-background: #6666BB11;
+  --bob-projects-text-color: inherit;
+
+  --bob-links-background: #6666BB11;
+  --bob-links-text-color: inherit;
+
+  --bob-tags-shadow-color: #DDDDDD;
+
+  --bob-footer-background: #FCFCFC;
+  --bob-footer-text-color: #BBBBBB;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bob-theme-color: #9999BB;
+
+    --bob-background: linear-gradient(#242428, #242432);
+    --bob-text-color: #F6F6F6;
+
+    --bob-header-background: #363636;
+    --bob-header-text-color: #F6F6F6;
+    --bob-header-avatar-shadow-color: #646464;
+
+    --bob-icon-background: #666666;
+
+    --bob-small-text-color: #888888;
+
+    --bob-code-background: #666666;
+
+    --bob-grid-block-background: #363636;
+    --bob-grid-block-text-color: #F6F6F6;
+
+    --bob-card-background: #363636;
+    --bob-card-text-color: #F6F6F6;
+
+    --bob-bangumi-background: #9999BB11;
+    --bob-bangumi-text-color: inherit;
+
+    --bob-posts-background: #9999BB11;
+    --bob-posts-text-color: inherit;
+
+    --bob-projects-background: #9999BB11;
+    --bob-projects-text-color: inherit;
+
+    --bob-links-background: #9999BB11;
+    --bob-links-text-color: inherit;
+
+    --bob-tags-shadow-color: #484848;
+
+    --bob-footer-background: #363636;
+    --bob-footer-text-color: #777777;
+  }
+
+  img {
+    opacity: 0.5;
+  }
+}
+
+/* Animation */
+* {
+  transition: 0.4s cubic-bezier(.6,.95,.75,1);
+}
+
+/* Basic */
+html {
+  line-height: 1.5;
+  scrollbar-color: #CCCCCC transparent;
+  scrollbar-width: thin;
+}
+
+body {
+  background: var(--bob-background);
+  color: var(--bob-text-color);
+  font-family: "Inconsolata", "Noto Sans SC", monospace;
+  font-size: 16px;
+  min-height: 100vh;
+}
+
+/* Titles */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  margin: 0.75em 0;
+}
+
+h1 {font-size: 2em;}
+h2 {font-size: 1.75em;}
+h3 {font-size: 1.5em;}
+h4 {font-size: 1.25em;}
+h5 {font-size: 1em;}
+h6 {font-size: 0.75em;}
+
+/* Links */
+a {
+  color: var(--bob-theme-color);
+  text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+/* Inline Code */
+code {
+	background: var(--bob-code-background);
+	border-radius: 4px;
+  display: inline-block;
+  font-size: 0.75em;
+  font-family: "Inconsolata", "Noto Sans SC", monospace;
+  margin: 6px 0;
+	padding: 4px 8px;
+  word-break: keep-all;
+}
+
+/* Code Block */
+pre code {
+  background: var(--bob-code-background);
+  border-radius: 12px;
+  display: block;
+  font-family: "Inconsolata", "Noto Sans SC", monospace;
+  padding: 1em;
+}
+
+/* Image */
+img {
+  border-radius: 12px;
+  opacity: 1;
+  user-select: none;
+}
+
+/* Image Dark Mode */
+@media (prefers-color-scheme: dark) {
+  img {
+    opacity: 0.5;
+  }
+}
+
+img.bob-img-block {
+  display: block;
+
+  width: 100%;
+  height: auto;
+}
+
+/* Small */
+small {
+  color: var(--bob-small-text-color);
+  font-size: 0.75em;
+  line-height: 1.25;
+}
+
+/* Header */
+header {
+  background: var(--bob-header-background);
+  border-radius: 12px;
+  color: var(--bob-header-text-color);
+  display: block;
+  line-height: 1.5;
+  margin-top: 3.25em;
+  padding: 2em 3.5em;
+  position: relative;
+}
+
+/* Header Title */
+header h1 {
+  font-size: 2.5em;
+  line-height: 1.2;
+  margin: 8px 0;
+}
+
+header h1::after {
+  animation-name: input;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  color: var(--bob-theme-color);
+  content: '_';
+}
+
+@keyframes input {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Header-Avatar */
+header .bob-header-avatar {
+  border-radius: 9999px;
+  opacity: 0.6;
+
+  width: 50px;
+  height: 50px;
+}
+
+header .bob-header-avatar:hover {
+  box-shadow: 0 4px 12px var(--bob-header-avatar-shadow-color);
+  opacity: 0.8;
+  transform: rotate(360deg) scale(1.25);
+}
+
+@media (min-width: 768px) {
+  header .bob-header-avatar {
+    border-radius: 9999px;
+    opacity: 0.6;
+    position: absolute;
+
+    top: 20%;
+    bottom: 20%;
+    right: 48px;
+
+    width: auto;
+    height: 60%;
+  }
+}
+
+/* Container */
+.bob-container {
+  margin: auto;
+  max-width: 1024px;
+  padding: 16px;
+}
+
+/* Remix Icons */
+[class*="ri-"] {
+	font-size: 1.5em;
+	line-height: 1;
+}
+
+/* Typo.Less */
+.typo {
+  border-radius: 12px;
+}
+
+/* Grid */
+.bob-grid {
+	display: grid;
+  gap: 1em;
+  grid-template-columns: 50fr 50fr;
+  margin-top: 1em;
+}
+
+@media (min-width: 768px) {
+  .bob-grid {
+    display: grid;
+    gap: 1em;
+    grid-template-columns: 50fr 50fr;
+    margin-top: 1em;
+  }
+}
+
+.bob-grid .bob-grid-block {
+  background: var(--bob-grid-block-background);
+  border-radius: 12px;
+  color: var(--bob-grid-block-text-color);
+	padding: 1.75em;
+  text-align: center;
+}
+
+/* Card */
+.bob-card {
+  background: var(--bob-card-background);
+  border-radius: 12px;
+  color: var(--bob-card-text-color);
+  margin-top: 1em;
+  padding: 1.75em;
+}
+
+/* Bangumi Style */
+.bob-bangumi ul {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: 50fr 50fr;
+  gap: 1em;
+}
+
+.bob-bangumi li {
+  background: var(--bob-bangumi-background);
+  border-radius: 12px;
+  color: var(--bob-bangumi-text-color);
+  display: block;
+  line-height: 1.25;
+  padding: 1.25em;
+}
+
+/* Posts Style */
+.bob-posts ul {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: 50fr 50fr;
+  gap: 1em;
+}
+
+.bob-posts li {
+  background: var(--bob-posts-background);
+  border-radius: 12px;
+  color: var(--bob-posts-text-color);
+  display: block;
+  line-height: 1.25;
+  padding: 1.25em;
+}
+
+/* Post-Style */
+.bob-post-title {
+  color: var(--bob-theme-color);
+  font-size: 42px;
+  line-height: 1.2;
+  padding: 16px 4px;
+  text-align: center;
+}
+
+.bob-post-links {
+  display: block;
+  margin: 4px 0;
+  text-align: center;
+}
+
+/* GitHub Projects Style */
+.bob-projects-gh ul {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: 33.33fr 33.33fr 33.33fr;
+  gap: 1em;
+}
+
+.bob-projects-gh li {
+  background: var(--bob-projects-background);
+  border-radius: 12px;
+  color: var(--bob-projects-text-color);
+  display: block;
+  line-height: 1.25;
+  padding: 1.25em;
+}
+
+.bob-projects-gh .bob-projects-gh-archived::before {
+  content: 'ARCHIVED';
+  display: block;
+  font-size: 12px;
+  float: right;
+  opacity: 0.5;
+  position: relative;
+}
+
+/* Links Style */
+.bob-links ul {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: 50fr 50fr;
+  gap: 1em;
+}
+
+.bob-links li {
+  background: var(--bob-links-background);
+  border-radius: 12px;
+  color: var(--bob-links-text-color);
+  display: block;
+  line-height: 1.25;
+  padding: 1.25em;
+}
+
+/* Tags */
+.bob-tags {
+  background-color: inherit;
+  border: 1px solid var(--bob-tags-shadow-color);
+  border-radius: 9999px;
+  box-shadow: 0 1px 2px var(--bob-tags-shadow-color);
+  display: inline-block;
+  font-size: 0.75em;
+  margin: 2px 0;
+  padding: 2px 8px;
+  user-select: none;
+}
+
+/* Footer */
+footer {
+  background: var(--bob-footer-background);
+  border-radius: 12px;
+  color: var(--bob-footer-text-color);
+  font-size: 1em;
+  margin-top: 1em;
+  margin-bottom: 3.25em;
+  padding: 1.25em;
+  text-align: center;
+}

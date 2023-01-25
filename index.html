@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Here is BobYang's Website! Posts, Projects, ACGN and More...">
+  <link href="./src/styles/styles.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/82699919"/>
+  <title>BobYang</title>
+</head>
+
+<body>
+  <div class="bob-container">
+    <header>
+      <img src="https://avatars.githubusercontent.com/u/82699919" class="bob-header-avatar">
+      <h1>
+      	Hi there!<br>
+      	I'm <a href="./">@BobYang</a>.</h1>
+
+      <p>
+        A <b>Junior High School</b> student from <b>Taiwan, China</b>.<br>
+        Also a CSSer, Scratcher, <del>Frontend Developer and Web Designer</del>.<br>
+        Creator of 
+        <a href="https://github.com/wux-ui"><b>@WuX-UI</b></a>, 
+        <a href="https://github.com/wuxt-org"><b>@WuXT</b></a> and 
+        <a href="https://github.com/Socialogs"><b>@SocialogsDev</b></a>.<br>
+      </p>
+
+      <nav>
+        <a href="https://github.com/wuxian425"><i class="ri-github-fill"></i></a>
+        <a href="https://twitter.com/Bob0800"><i class="ri-twitter-fill"></i></a>
+        <a href="https://instagram.com/wow.bob0800"><i class="ri-instagram-fill"></i></a>
+        <a href="mailto://yangbob123456@gmail.com"><i class="ri-mail-fill"></i></a>
+      </nav>
+    </header>
+
+    <main id="rMain">
+    	<!-- Loading Text -->
+      <div class="bob-card" style="text-align:center;">
+      	<h1>ちょっと待って!</h1>
+      </div>
+    </main>
+
+    <!-- Write your Routes here! -->
+    <div style="display: none;">
+      <!-- Home -->
+      <div id="rHome">
+        <div class="bob-grid">
+          <div class="bob-grid-block">
+            <a href="#!Bangumi">Bangumi / 番组</a><br>
+            <small>Animate, Comic and more!</small>
+          </div>
+          <div class="bob-grid-block">
+            <a href="#!Posts">Posts / 文章</a><br>
+            <small>Some posts by my mind.</small>
+          </div>
+          <div class="bob-grid-block">
+            <a href="#!Projects">Projects / 项目</a><br>
+            <small>My boring projects?</small>
+          </div>
+          <div class="bob-grid-block">
+            <a href="#!Links">Links / 链接</a><br>
+            <small>Friends and cool things!</small>
+          </div>
+        </div> 
+
+        <div class="bob-card">
+        	<small>Tags</small>
+        	<div>
+        		<span class="bob-tags">Homebody / 宅</span>
+        		<span class="bob-tags">ACGN / 二次元</span>
+        		<span class="bob-tags">Frontend / 前端</span>
+        		<span class="bob-tags">Student / 学生</span>
+        		<span class="bob-tags">Trash / 废物</span>
+        		<span class="bob-tags">CSSer / 写样式的</span>
+        		<span class="bob-tags">Scratcher / <del>猫奴（？）</del></span>
+        		<span class="bob-tags">Chuunibyou / 中二</span>
+        		<span class="bob-tags">Chinese / 中国人</span>
+        		<span class="bob-tags">Hypochondria / 疑心病</span>
+        		<span class="bob-tags"><del>Designer / 设计</del></span>
+        	</div>
+        </div>
+
+        <div class="bob-card">
+        	<img src="https://ghchart.rshah.org/6666BB/wuxian425" class="bob-img-block">
+        </div>
+      </div>
+
+      <!-- Bangumi -->
+      <div id="rBangumi">
+      	<div class="bob-card">
+        	<a href="#!Home">&lt; Back</a>
+        	<h2>Bangumi / 番组</h2>
+        	<div class="bob-bangumi" id="bangumi">
+        		LOADING...
+        	</div>
+      	</div>
+      </div>
+
+      <!-- Posts -->
+      <div id="rPosts">
+        <div class="bob-card">
+        	<a href="#!Home">&lt; Back</a>
+        	<h2>Posts / 文章</h2>
+        	<div class="bob-posts" id="posts">
+        		LOADING...
+        	</div>
+      	</div>
+      </div>
+
+      <!-- Post -->
+      <div id="rPost">
+        <div class="bob-card">
+        	<a href="#!Posts">&lt; Back</a>
+        	<div id="post">
+        		LOADING...
+        	</div>
+      	</div>
+      </div>
+
+      <!-- Projects -->
+      <div id="rProjects">
+        <div class="bob-card">
+        	<a href="#!Home">&lt; Back</a>
+        	<h2>Projects / 项目</h2>
+        	<h4>Projects from GitHub</h4>
+        	<div class="bob-projects-gh" id="projects">
+        		<div style="text-align:center;">
+        			<div class="bob-loading"></div>
+        			正在从 GitHub 加载存储库！如果久未加载完成可能是网络问题。 
+        		</div>
+        	</div>
+      	</div>
+      </div>
+
+      <!-- Links -->
+      <div id="rLinks">
+        <div class="bob-card">
+        	<a href="#!Home">&lt; Back</a>
+        	<h2>Links / 链接</h2>
+        	<div class="bob-links" id="links">
+        		LOADING...
+        	</div>
+      	</div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+    	(c) 2023 <b><u>BobYang</u></b>. Made with Love.<br>
+    	<small>Hope to live the way I like.</small>
+    </footer>
+  </div>
+
+  <!-- Config -->
+  <script src="./config.js"></script>
+  <!-- Markdown Parser -->
+  <script src="./src/scripts/include/marked.min.js"></script>
+  <script src="./src/scripts/include/Q.js"></script>
+  <!-- Get My Bangumi List -->
+  <script src="./src/scripts/index.js"></script>
+</body>
+
+</html>
