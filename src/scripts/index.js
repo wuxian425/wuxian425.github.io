@@ -118,7 +118,6 @@ function getPosts(username, repo) {
 };
 
 function getPost(username, repo, id) {
-  var pid = id - 1;
   var xhr = new XMLHttpRequest();
   var apiAddress = 'https://api.github.com/repos/' + username + '/' + repo + '/issues';
   xhr.open('GET', apiAddress, true);
@@ -127,17 +126,18 @@ function getPost(username, repo, id) {
     var apiCallback = JSON.parse(xhr.responseText);
     console.log(apiCallback);
     var apiCallbackJsonLength = apiCallback.length;
+		var apiCallbackId = apiCallbackJsonLength - id
 
     var apiDataPrint = '';
 
-    if (apiCallback[pid].user.login == username) {
+    if (apiCallback[apiCallbackId].user.login == username) {
       apiDataPrint += 
       `<div>` +
-      	`<h2 class="bob-post-title">` + apiCallback[pid].title + `</h2>` +
+      	`<h2 class="bob-post-title">` + apiCallback[apiCallbackId].title + `</h2>` +
       	`<div class="typo">` +
-        	marked.parse(apiCallback[pid].body) +
+        	marked.parse(apiCallback[apiCallbackId].body) +
         `</div>` +
-        `<small class="bob-post-links"><a href="` + apiCallback[pid].html_url + `">Post on GitHub</a></small>` +
+        `<small class="bob-post-links"><a href="` + apiCallback[apiCallbackId].html_url + `">Post on GitHub</a></small>` +
       `</div>`;
     };
 
